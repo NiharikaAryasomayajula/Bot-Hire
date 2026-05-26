@@ -326,7 +326,17 @@ function showStatus(type,msg){
 const HIGH_RISK=['earn','weekly','per week','per day','guaranteed','unlimited earning','no experience needed','no experience required','work from home guaranteed','make money','easy money','quick cash','bank details','bank account','wire transfer','western union','send money','upfront fee','registration fee','training fee','click links','simple tasks','anyone can do','text only','whatsapp only','do not call','cv not required','resume not required'];
 const MEDIUM_RISK=['be your own boss','unlimited potential','amazing opportunity','passive income','residual income','recruit','multi-level','investment required','no interview','immediate hire','hired on spot','confidential company','undisclosed company'];
 const URGENCY=['urgent','asap','immediately','today only','limited spots','act now','respond immediately','last chance','positions filling fast','closing soon'];
-function getM(text,list){return list.filter(s=>text.toLowerCase().includes(s));}
+function getM(text,list){
+  const t=text.toLowerCase();
+  return list.filter(s=>{
+    // Use word boundary check: char before and after must not be a letter
+    const idx=t.indexOf(s);
+    if(idx===-1)return false;
+    const before=idx===0||!/[a-z]/.test(t[idx-1]);
+    const after=idx+s.length>=t.length||!/[a-z]/.test(t[idx+s.length]);
+    return before&&after;
+  });
+}
 
 function scorePosting({title,description,company,salary,hasLogo,hasQuestions,isRemote}){
   const full=[title,description,company].join(' ');
