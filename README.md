@@ -10,6 +10,8 @@ Turns out there is. BotHire flags fraudulent job postings using NLP and a handfu
 
 ## Results
 
+<img width="1039" height="802" alt="image" src="https://github.com/user-attachments/assets/eed38f69-a965-4729-bb98-af34567465da" />
+
 Tested on the [Kaggle fake job postings dataset](https://www.kaggle.com/datasets/shivamb/real-or-fake-fake-jobposting-prediction) — ~18k real postings, about 5% fraudulent.
 
 - Accuracy: **80%**
