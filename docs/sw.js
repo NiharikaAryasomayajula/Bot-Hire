@@ -1,4 +1,4 @@
-const CACHE = 'bothire-v1';
+const CACHE = 'bothire-v2';
 const ASSETS = [
   '/Bot-Hire/',
   '/Bot-Hire/index.html',
