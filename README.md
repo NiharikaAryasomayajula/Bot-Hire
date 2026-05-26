@@ -18,8 +18,6 @@ Tested on the [Kaggle fake job postings dataset](https://www.kaggle.com/datasets
 
 The fraud class F1 is what matters here. Getting 80% accuracy on a 95/5 dataset is easy — just predict "legitimate" every time. The 0.75 F1 on the minority class is what tells you it's actually catching scams.
 
-![Confusion Matrix](outputs/plots/confusion_matrix.png)
-![Top Fraud Tokens](outputs/plots/top_fraud_tokens.png)
 
 ---
 
